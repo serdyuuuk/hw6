@@ -13,7 +13,109 @@
 
 body {
   min-width: 350px;
+  .upPanel {
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    @media (max-width: 640px) {
+      width: 100%;
+    }
 
+    .leftPanel {
+      color: white;
+      background: rgba(0, 0, 0, 0.8);
+      height: @upPanelHeight;
+      z-index: 5;
+
+      .companyName {
+        .picture {
+          width: @upPanelHeight;
+          transform: rotate(180deg);
+          position: absolute;
+          bottom: -8px;
+          left: 10px;
+        }
+
+        .labelKMA {
+          margin-top: 15px;
+          line-height: 90%;
+          text-align: center;
+          font-size: x-large;
+          font-weight: normal;
+
+          .PIZZA {
+            font-size: large;
+          }
+        }
+
+        border-width: 1px;
+        border-color: #d16200;
+        border-bottom: 0;
+        border-top: 0;
+        border-style: solid;
+        box-sizing: border-box;
+        margin-left: 10px;
+        float: left;
+        width: @upPanelHeight;
+        height: @upPanelHeight;
+        background: @backgroundButtonColor;
+      }
+
+      .top {
+        box-sizing: border-box;
+
+        .label {
+          font-weight: normal;
+          font-size: small;
+          color: #e5e4e4;
+        }
+
+        .phoneNumber {
+          padding-left: 0;
+          margin-top: 11px;
+          display: inline-block;
+        }
+
+        .loginButton {
+          top: 5px;
+          right: 5px;
+          @media (max-width: 800px) {
+            top: 45px;
+          }
+          display: block;
+          position: absolute;
+          height: 30px;
+          outline: 0 !important;
+        }
+
+        .orderButton {
+          display: none;
+          @media (max-width: 640px) {
+            top: 5px;
+            right: 5px;
+            display: block;
+            position: absolute;
+            height: 30px;
+            outline: 0 !important;
+          }
+        }
+
+        border-style: solid;
+        border-bottom-color: #e5e4e4;
+        border-width: 0;
+        border-bottom-width: 1px;
+        margin-right: 5px;
+        margin-left: @upPanelHeight+15px;
+        padding-bottom: 8.6px;
+      }
+
+      .pizza {
+        display: inline-block;
+        margin-left: 5px;
+        margin-top: 9px;
+      }
+    }
+  }
   .container-fluid {
     padding-right: 0;
     @media (max-width: 640px) {
@@ -23,111 +125,6 @@ body {
 
   .row {
     margin-right: 0;
-
-    .upPanel {
-      padding-left: 0;
-      padding-right: 0;
-      box-sizing: border-box;
-      @media (max-width: 640px) {
-        width: 100%;
-      }
-
-      .leftPanel {
-        color: white;
-        background: rgba(0, 0, 0, 0.8);
-        height: @upPanelHeight;
-        z-index: 5;
-
-        .companyName {
-          .picture {
-            width: @upPanelHeight;
-            transform: rotate(180deg);
-            position: absolute;
-            bottom: -8px;
-            left: 10px;
-          }
-
-          .labelKMA {
-            margin-top: 15px;
-            line-height: 90%;
-            text-align: center;
-            font-size: x-large;
-            font-weight: normal;
-
-            .PIZZA {
-              font-size: large;
-            }
-          }
-
-          border-width: 1px;
-          border-color: #d16200;
-          border-bottom: 0;
-          border-top: 0;
-          border-style: solid;
-          box-sizing: border-box;
-          margin-left: 10px;
-          float: left;
-          width: @upPanelHeight;
-          height: @upPanelHeight;
-          background: @backgroundButtonColor;
-        }
-
-        .top {
-          box-sizing: border-box;
-
-          .label {
-            font-weight: normal;
-            font-size: small;
-            color: #e5e4e4;
-          }
-
-          .phoneNumber {
-            padding-left: 0;
-            margin-top: 11px;
-            display: inline-block;
-          }
-
-          .loginButton {
-            top: 5px;
-            right: 5px;
-            @media (max-width: 800px) {
-              top: 45px;
-            }
-            display: block;
-            position: absolute;
-            height: 30px;
-            outline: 0 !important;
-          }
-
-          .orderButton {
-            display: none;
-            @media (max-width: 640px) {
-              top: 5px;
-              right: 5px;
-              display: block;
-              position: absolute;
-              height: 30px;
-              outline: 0 !important;
-            }
-          }
-
-          border-style: solid;
-          border-bottom-color: #e5e4e4;
-          border-width: 0;
-          border-bottom-width: 1px;
-          margin-right: 5px;
-          margin-left: @upPanelHeight+15px;
-          padding-bottom: 8.6px;
-        }
-
-        .pizza {
-          display: inline-block;
-          margin-left: 5px;
-          margin-top: 9px;
-        }
-      }
-    }
-
     .allPizzaLabel {
       text-align: center;
       font-size: x-large;
