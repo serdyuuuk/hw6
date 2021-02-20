@@ -19,6 +19,8 @@ body {
     box-sizing: border-box;
     @media (max-width: 640px) {
       width: 100%;
+      display: block;
+      position: relative;
     }
 
     .leftPanel {
@@ -125,161 +127,168 @@ body {
 
   .row {
     margin-right: 0;
-    .allPizzaLabel {
-      text-align: center;
-      font-size: x-large;
-      font-weight: bold;
+    margin-bottom: @upPanelHeight*1.5;;
+    .menu {
       margin-top: @upPanelHeight;
-
-      .numberLabel {
-        color: white;
-        display: inline-block;
-        font-size: medium;
-        background: #f0ad4e;
-        border-radius: 50%;
-        width: @sizeLabel;
-        height: @sizeLabel;
+      @media (max-width: 640px) {
+        margin-top: 0;
       }
-    }
-
-    .typeOfPizza {
-      margin-top: 17px;
-      margin-bottom: 17px;
-      justify-content: center;
-      text-align: center;
-
-      .btn {
-        margin-top: 3px;
-        margin-bottom: 3px;
-        display: inline-block;
-        width: 140px;
-        font-size: small;
-        border-radius: 10px;
-      }
-    }
-
-    .pizza-card {
-      .img-fluid{
-        border-radius: 50%;
-      }
-      img {
-        max-width: 250px;
-      }
-
-      h3 {
-        color: @backgroundButtonColor;
+      .allPizzaLabel {
+        text-align: center;
+        font-size: x-large;
         font-weight: bold;
-      }
 
-      .img-fluid {
-        max-width: 100%;
-        height: auto;
-      }
-
-      .namePizza {
-        color: @backgroundButtonColor;
-        height: 55px;
-        margin-bottom: 0;
+        .numberLabel {
+          color: white;
+          display: inline-block;
+          font-size: medium;
+          background: #f0ad4e;
+          border-radius: 50%;
+          width: @sizeLabel;
+          height: @sizeLabel;
+        }
       }
 
       .typeOfPizza {
-        text-align: left;
-        margin: 0;
-        font-size: small;
-        color: gray;
-        font-weight: bold;
-      }
-
-      .description {
-        @media (min-width: 1200px) {
-          height: 80px;
-        }
-        @media (max-width: 1200px) {
-          height: 120px;
-        }
-        @media (max-width: 1100px) {
-          height: 140px;
-        }
-        @media (max-width: 992px) {
-          height: 130px;
-        }
-        @media (max-width: 767px) {
-          height: 80px;
-        }
-      }
-
-      .badge {
-        position: absolute;
-        right: 3px;
-        top: -10px;
-        font-size: large;
-        padding: 5px;
-      }
-
-      .newBadge {
-        background: firebrick;
-      }
-
-      .popularBadge {
-        background: green;
-      }
-
-      .columns {
+        margin-top: 17px;
+        margin-bottom: 17px;
+        justify-content: center;
         text-align: center;
-        letter-spacing: 40px;
-        @media (max-width: 1200px) {
-          letter-spacing: 20px;
-        }
 
-        .pizzaColumn {
+        .btn {
+          margin-top: 3px;
+          margin-bottom: 3px;
           display: inline-block;
-          width: 40%;
-          text-align: center;
+          width: 140px;
+          font-size: small;
+          border-radius: 10px;
+        }
+      }
+
+      .pizza-card {
+        .img-fluid {
+          border-radius: 50%;
+        }
+
+        img {
+          max-width: 250px;
+        }
+
+        h3 {
+          color: @backgroundButtonColor;
           font-weight: bold;
-          letter-spacing: normal;
+        }
 
-          img {
-            margin-bottom: 3px;
+        .img-fluid {
+          max-width: 100%;
+          height: auto;
+        }
+
+        .namePizza {
+          color: @backgroundButtonColor;
+          height: 55px;
+          margin-bottom: 0;
+        }
+
+        .typeOfPizza {
+          text-align: left;
+          margin: 0;
+          font-size: small;
+          color: gray;
+          font-weight: bold;
+        }
+
+        .description {
+          @media (min-width: 1200px) {
+            height: 80px;
+          }
+          @media (max-width: 1200px) {
+            height: 120px;
+          }
+          @media (max-width: 1100px) {
+            height: 140px;
+          }
+          @media (max-width: 992px) {
+            height: 130px;
+          }
+          @media (max-width: 767px) {
+            height: 80px;
+          }
+        }
+
+        .badge {
+          position: absolute;
+          right: 3px;
+          top: -10px;
+          font-size: large;
+          padding: 5px;
+        }
+
+        .newBadge {
+          background: firebrick;
+        }
+
+        .popularBadge {
+          background: green;
+        }
+
+        .columns {
+          text-align: center;
+          letter-spacing: 40px;
+          @media (max-width: 1200px) {
+            letter-spacing: 20px;
           }
 
-          .btn {
-            outline: 0 !important;
-          }
+          .pizzaColumn {
+            display: inline-block;
+            width: 40%;
+            text-align: center;
+            font-weight: bold;
+            letter-spacing: normal;
 
-          .price {
-            font-size: x-large;
+            img {
+              margin-bottom: 3px;
+            }
+
+            .btn {
+              outline: 0 !important;
+            }
+
+            .price {
+              font-size: x-large;
+            }
           }
         }
       }
-    }
 
-    background: #fffff5;
-    margin-bottom: @upPanelHeight*1.5;;
+      background: #fffff5;
 
-    .infAboutCompany {
-      border-style: solid;
-      border-width: 0;
-      border-top-width: 1px;
-      border-color: darkgrey;
-      color: darkgrey;;
-      text-align: center;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      height: @upPanelHeight*1.5;
-      display: block;
-      background: white;
 
-      .firstInf {
-        margin-left: 5px;
-        margin-right: 5px;
-        margin-top: @upPanelHeight*0.35;
-      }
+      .infAboutCompany {
+        border-style: solid;
+        border-width: 0;
+        border-top-width: 1px;
+        border-color: darkgrey;
+        color: darkgrey;;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: @upPanelHeight*1.5;
+        display: block;
+        background: white;
 
-      .secondInf {
-        margin-left: 5px;
-        margin-right: 5px;
-        margin-top: 7px;
+        .firstInf {
+          margin-left: 5px;
+          margin-right: 5px;
+          margin-top: @upPanelHeight*0.35;
+        }
+
+        .secondInf {
+          margin-left: 5px;
+          margin-right: 5px;
+          margin-top: 7px;
+        }
       }
     }
   }
@@ -340,3 +349,4 @@ body {
 }
 
 @import "pizza/pizza-card";
+@import "pizza/order";

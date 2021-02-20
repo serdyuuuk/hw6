@@ -21,7 +21,7 @@
     margin-bottom: 0;
   }
   .rightPanel::-webkit-scrollbar{
-    width: 0px;
+    display: none;
   }
   .rightPanel {
     overflow: auto;
@@ -136,6 +136,12 @@
               font-size: large;
             }
           }
+          .notVisible {
+            display: none;
+          }
+          .visible {
+            display: block;
+          }
           .deleteButton{
             margin-left: 15px;
           }
@@ -143,6 +149,10 @@
             display: inline-block;
             font-size: medium;
             font-weight: normal;
+          }
+          .numberOrder{
+            font-weight:bold;
+            margin-left: 10px;
           }
         }
       }
