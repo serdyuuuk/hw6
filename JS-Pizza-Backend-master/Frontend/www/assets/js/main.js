@@ -216,13 +216,13 @@ var Templates = require('../Templates');
 var PizzaCart = require('./PizzaCart');
 var API = require('../API')
 var Pizza_List = [];
-var thisUrl="http://localhost:5050";
-var orderUrl=thisUrl+"//order.html";
+var thisUrl = "http://localhost:5050";
+var orderUrl = thisUrl + "//order.html";
 //HTML едемент куди будуть додаватися піци
 var $pizza_list = $(".pizzas");
 
-function initPizzaList(error, data){
-    if (error === null){
+function initPizzaList(error, data) {
+    if (error === null) {
         Pizza_List = data;
         showPizzaList(Pizza_List);
     }
@@ -319,7 +319,7 @@ $(".orderButton").click(function () {
 
 $(".buyButton").click(function () {
     var checkUrl = window.location.href;
-    if (checkUrl.endsWith("order.html")){
+    if (checkUrl.endsWith("order.html")) {
         window.location.href = thisUrl;
     } else {
         window.location.href = orderUrl;
@@ -356,6 +356,35 @@ function phoneCheck(numb) {
     return false;
 }
 
+$("#inputPhone").on("input", function f() {
+    var phone = $("#inputPhone").val();
+    if (phoneCheck(phone)) {
+        $("#phoneGroup").removeClass("has-error");
+        $("#phoneGroup").addClass("has-success");
+        $("#phoneError").removeClass("visible");
+        $("#phoneError").addClass("notVisible");
+    } else {
+        $("#phoneGroup").removeClass("has-success");
+        $("#phoneGroup").addClass("has-error");
+        $("#phoneError").removeClass("notVisible");
+        $("#phoneError").addClass("visible");
+    }
+
+});
+$("#inputName").on("input", function f() {
+    var name = $("#inputName").val();
+    if (nameCheck(name)) {
+        $("#nameGroup").removeClass("has-error");
+        $("#nameGroup").addClass("has-success");
+        $("#nameError").removeClass("visible");
+        $("#nameError").addClass("notVisible");
+    } else {
+        $("#nameGroup").removeClass("has-success");
+        $("#nameGroup").addClass("has-error");
+        $("#nameError").removeClass("notVisible");
+        $("#nameError").addClass("visible");
+    }
+});
 var basil = require('basil.js');
 basil = new basil();
 exports.get = function (key) {
@@ -372,35 +401,13 @@ $("#sendInfo").click(function () {
     var name = $("#inputName").val();
     var phone = $("#inputPhone").val();
     var address = $("#inputAddress").val();
-    if (nameCheck(name)) {
-        $("#nameGroup").removeClass("has-error");
-        $("#nameGroup").addClass("has-success");
-        $("#nameError").removeClass("visible");
-        $("#nameError").addClass("notVisible");
-    } else {
-        $("#nameGroup").removeClass("has-success");
-        $("#nameGroup").addClass("has-error");
-        $("#nameError").removeClass("notVisible");
-        $("#nameError").addClass("visible");
-    }
-    if (phoneCheck(phone)) {
-        $("#phoneGroup").removeClass("has-error");
-        $("#phoneGroup").addClass("has-success");
-        $("#phoneError").removeClass("visible");
-        $("#phoneError").addClass("notVisible");
-    } else {
-        $("#phoneGroup").removeClass("has-success");
-        $("#phoneGroup").addClass("has-error");
-        $("#phoneError").removeClass("notVisible");
-        $("#phoneError").addClass("visible");
-    }
-    if (nameCheck(name) && phoneCheck(phone)){
+    if (nameCheck(name) && phoneCheck(phone)) {
         var orderPizzas = [];
         basil.get("cartSt").forEach(element => {
-           var onePizza = {
-               pizza: element.pizza.title,
-               size: element.size,
-               quantity: element.quantity
+            var onePizza = {
+                pizza: element.pizza.title,
+                size: element.size,
+                quantity: element.quantity
             }
             orderPizzas.push(onePizza);
         });
@@ -410,7 +417,7 @@ $("#sendInfo").click(function () {
             address: address,
             pizzas: orderPizzas
         }
-        API.createOrder(data,sendToServer)
+        API.createOrder(data, sendToServer)
     }
 });
 
