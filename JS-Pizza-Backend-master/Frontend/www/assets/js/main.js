@@ -301,7 +301,6 @@ function filterPizza(filter) {
 function initialiseMenu() {
     API.getPizzaList(initPizzaList);
     //Показуємо усі піци
-    showPizzaList(Pizza_List);
 }
 
 $(".orderButton").click(function () {
